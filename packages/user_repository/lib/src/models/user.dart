@@ -8,7 +8,7 @@ class User extends Equatable {
   String type;
   String token;
 
-  User({this.userId, this.firstname, this.lastname, this.email, this.type, this.token});
+  User({this.userId, this.firstname, this.lastname, this.email, this.type});
 
   factory User.fromJson(Map<String, dynamic> responseData) {
     return User(
@@ -17,7 +17,6 @@ class User extends Equatable {
       lastname: responseData['lastname'],
       email: responseData['email'],
       type: responseData['type'],
-      token: responseData['access_token'],
     );
   }
 
