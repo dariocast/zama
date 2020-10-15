@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zama/authentication/authentication.dart';
+import 'home_drawer.dart';
 
 class HomePage extends StatelessWidget {
   static Route route() {
@@ -10,35 +11,20 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
+      appBar: AppBar(
+        title: const Text('Home'),
+        actions: [
+          IconButton(icon: Icon(Icons.exit_to_app), onPressed: () {
+            context
+                .bloc<AuthenticationBloc>()
+                .add(AuthenticationLogoutRequested());
+          },)
+        ],
+      ),
+      drawer: HomeDrawer(currentUser: context.bloc<AuthenticationBloc>().state.user,),
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              'UserID: ${context.bloc<AuthenticationBloc>().state.user.userId}',
-            ),
-            Text(
-              'Firstname: ${context.bloc<AuthenticationBloc>().state.user.firstname}',
-            ),
-            Text(
-              'Lastname: ${context.bloc<AuthenticationBloc>().state.user.lastname}',
-            ),
-            Text(
-              'EMail: ${context.bloc<AuthenticationBloc>().state.user.email}',
-            ),
-            Text(
-              'Type: ${context.bloc<AuthenticationBloc>().state.user.type}',
-            ),
-            RaisedButton(
-              child: const Text('Logout'),
-              onPressed: () {
-                context
-                    .bloc<AuthenticationBloc>()
-                    .add(AuthenticationLogoutRequested());
-              },
-            ),
-          ],
+        child: Text(
+            'Benvenuto ${context.bloc<AuthenticationBloc>().state.user.firstname}'
         ),
       ),
     );
