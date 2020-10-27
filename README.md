@@ -1,3 +1,0 @@
-# zama
-
-Zama app
