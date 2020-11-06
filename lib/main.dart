@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zama/zama_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,9 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      themeMode: ThemeMode.system,
+      theme: zamaThemes[ThemeMode.light],
+      darkTheme: zamaThemes[ThemeMode.dark],
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -49,10 +50,55 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline1(context),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline2(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline3(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline4(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline5(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.headline6(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.subtitle1(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.subtitle2(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.body1(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.body2(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.button(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.caption(context),
+            ),
+            Text(
+              'You have pushed the button this many times:',
+              style: ZamaTextStyles.overline(context),
             ),
           ],
         ),

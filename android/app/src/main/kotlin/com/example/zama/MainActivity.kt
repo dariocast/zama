@@ -1,4 +1,4 @@
-package com.example.zama
+package it.dariocast.zama
 
 import io.flutter.embedding.android.FlutterActivity
 
