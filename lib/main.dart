@@ -45,59 +45,60 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: ListView(
+          shrinkWrap: true,
+          padding: EdgeInsets.all(15.0),
           children: <Widget>[
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline1(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline2(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline3(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline4(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline5(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.headline6(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.subtitle1(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.subtitle2(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.body1(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.body2(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.button(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.caption(context),
             ),
             Text(
-              'You have pushed the button this many times:',
+              'testo',
               style: ZamaTextStyles.overline(context),
             ),
           ],
