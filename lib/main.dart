@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zama/zama_theme.dart';
 
@@ -11,11 +12,11 @@ class Zamapp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Zamapp',
       home: MainPage(title: 'Zamapp'),
       darkTheme: zamaThemes[ThemeMode.dark],
       theme: zamaThemes[ThemeMode.light],
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
     );
   }
 }
@@ -36,6 +37,9 @@ class _MainPageState extends State<MainPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: [
+          Theme.of(context).brightness == Brightness.light ? Icon(Icons.nightlight_round) : Icon(Icons.wb_sunny),
+        ],
       ),
       body: Center(
         child: ListView(
@@ -43,12 +47,56 @@ class _MainPageState extends State<MainPage> {
           padding: EdgeInsets.all(15.0),
           children: <Widget>[
             Text(
-              'testo',
+              'headline1',
               style: ZamaTextStyles.headline1(context),
             ),
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              'headline2',
+              style: ZamaTextStyles.headline2(context),
+            ),
+            Text(
+              'headline3',
+              style: ZamaTextStyles.headline3(context),
+            ),
+            Text(
+              'headline4',
+              style: ZamaTextStyles.headline4(context),
+            ),
+            Text(
+              'headline5',
+              style: ZamaTextStyles.headline5(context),
+            ),
+            Text(
+              'headline6',
+              style: ZamaTextStyles.headline6(context),
+            ),
+            Text(
+              'subtitle1',
+              style: ZamaTextStyles.subtitle1(context),
+            ),
+            Text(
+              'subtitle2',
+              style: ZamaTextStyles.subtitle2(context),
+            ),
+            Text(
+              'body1',
+              style: ZamaTextStyles.body1(context),
+            ),
+            Text(
+              'body2',
+              style: ZamaTextStyles.body2(context),
+            ),
+            Text(
+              'button',
+              style: ZamaTextStyles.button(context),
+              ),
+            Text(
+              'caption',
+              style: ZamaTextStyles.caption(context),
+            ),
+            Text(
+              'overline',
+              style: ZamaTextStyles.overline(context),
             ),
           ],
         ),

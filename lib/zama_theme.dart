@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 abstract class LightThemeColors {
   static Color get background => const Color(0xFFFFFFFF);
   static Color get surface => const Color(0xFFFFFFFF);
-  static Color get primary => const Color(0xFF6200EE);
-  static Color get primaryVariant => const Color(0xFF3700B3);
-  static Color get secondary => const Color(0xFF03DAC6);
-  static Color get secondaryVariant => const Color(0xFF018786);
-  static Color get error => const Color(0xFFB00020);
+  static Color get primary => const Color(0xFF2A9D8F);
+  static Color get primaryVariant => const Color(0xFF264653);
+  static Color get secondary => const Color(0xFFE9C46A);
+  static Color get secondaryVariant => const Color(0xFFF4A261);
+  static Color get error => const Color(0xFFE76F51);
 
   static Color get onPrimary => const Color(0xFFFFFFFF);
   static Color get onSecondary => const Color(0xFF000000);
@@ -86,6 +86,31 @@ abstract class ZamaColors {
   static Color error(BuildContext context) => ThemedColor(
       light: LightThemeColors.error,
       dark: DarkThemeColors.error
+  ).getColor(context);
+
+  static Color onPrimary(BuildContext context) => ThemedColor(
+      light: LightThemeColors.onPrimary,
+      dark: DarkThemeColors.onPrimary
+  ).getColor(context);
+
+  static Color onSecondary(BuildContext context) => ThemedColor(
+      light: LightThemeColors.onSecondary,
+      dark: DarkThemeColors.onSecondary
+  ).getColor(context);
+
+  static Color onBackground(BuildContext context) => ThemedColor(
+      light: LightThemeColors.onBackground,
+      dark: DarkThemeColors.onBackground
+  ).getColor(context);
+
+  static Color onSurface(BuildContext context) => ThemedColor(
+      light: LightThemeColors.onSurface,
+      dark: DarkThemeColors.onSurface
+  ).getColor(context);
+
+  static Color onError(BuildContext context) => ThemedColor(
+      light: LightThemeColors.onError,
+      dark: DarkThemeColors.onError
   ).getColor(context);
 }
 
