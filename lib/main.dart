@@ -2,41 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:zama/zama_theme.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(Zamapp());
 }
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class Zamapp extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      themeMode: ThemeMode.system,
-      theme: zamaThemes[ThemeMode.light],
+      home: MainPage(title: 'Zamapp'),
       darkTheme: zamaThemes[ThemeMode.dark],
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      theme: zamaThemes[ThemeMode.light],
+      themeMode: ThemeMode.system,
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class MainPage extends StatefulWidget {
+  MainPage({Key key, this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
@@ -54,60 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
               style: ZamaTextStyles.headline1(context),
             ),
             Text(
-              'testo',
-              style: ZamaTextStyles.headline2(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.headline3(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.headline4(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.headline5(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.headline6(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.subtitle1(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.subtitle2(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.body1(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.body2(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.button(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.caption(context),
-            ),
-            Text(
-              'testo',
-              style: ZamaTextStyles.overline(context),
+              '$_counter',
+              style: Theme.of(context).textTheme.headline4,
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
