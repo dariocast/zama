@@ -7,7 +7,6 @@ void main() {
 }
 
 class Zamapp extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,20 +30,32 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: ZamaTextStyles.headline6(context),
+        ),
+        centerTitle: true,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0.0,
         actions: [
-          Theme.of(context).brightness == Brightness.light ? Icon(Icons.nightlight_round) : Icon(Icons.wb_sunny),
+          Theme.of(context).brightness == Brightness.light
+              ? Icon(
+                  Icons.nightlight_round,
+                  color: ZamaColors.onBackground(context),
+                )
+              : Icon(
+                  Icons.wb_sunny,
+                  color: ZamaColors.onBackground(context),
+                ),
         ],
       ),
       body: Center(
         child: ListView(
-          shrinkWrap: true,
-          padding: EdgeInsets.all(15.0),
+          padding: EdgeInsets.all(3.0),
           children: <Widget>[
             Text(
               'headline1',
@@ -89,7 +100,7 @@ class _MainPageState extends State<MainPage> {
             Text(
               'button',
               style: ZamaTextStyles.button(context),
-              ),
+            ),
             Text(
               'caption',
               style: ZamaTextStyles.caption(context),
