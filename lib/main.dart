@@ -15,7 +15,7 @@ class Zamapp extends StatelessWidget {
       home: MainPage(title: 'Zamapp'),
       darkTheme: zamaThemes[ThemeMode.dark],
       theme: zamaThemes[ThemeMode.light],
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
     );
   }
 }
@@ -36,11 +36,9 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(
         title: Text(
           widget.title,
-          style: ZamaTextStyles.headline6(context),
+          style: ZamaTextStyles.headline6(context, color: ZamaColors.onBackground(context)),
         ),
         centerTitle: true,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        elevation: 0.0,
         actions: [
           Theme.of(context).brightness == Brightness.light
               ? Icon(
